@@ -1,4 +1,4 @@
-# eye-mock
+# eye-js
 EYE reasoning in JavaScript with WebAssembly solving your n3 reasoning with client side Prolog execution
 
 ## Usage
