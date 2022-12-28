@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "EYE reasoning in JavaScript with WebAssembly solving your n3 reasoning with client side Prolog execution",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
