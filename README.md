@@ -5,7 +5,7 @@ EYE reasoning in JavaScript with WebAssembly solving your n3 reasoning with clie
 
 Install the package via NPM
 ```
-npm install eye-js
+npm install @smessie/eye-js
 ```
 
 Import and use the function in your code

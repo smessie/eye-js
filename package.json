@@ -1,5 +1,5 @@
 {
-  "name": "eye-js",
+  "name": "@smessie/eye-js",
   "version": "1.0.0",
   "description": "EYE reasoning in JavaScript with WebAssembly solving your n3 reasoning with client side Prolog execution",
   "main": "index.js",
