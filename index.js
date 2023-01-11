@@ -1,4 +1,4 @@
-import { SWIPL, loadEye, queryOnce } from 'eyereasoner';
+import { SwiplEye, queryOnce } from 'eyereasoner';
 import {DataFactory, Parser, Store, Writer} from "n3";
 
 export async function n3reasoner(data, query) {
@@ -6,10 +6,7 @@ export async function n3reasoner(data, query) {
     const queryResults = [];
 
     // Instantiate a new SWIPL module and log any results it produces to the console
-    const Module = await SWIPL({ print: (str) => { queryResults.push(str) }, arguments: ['-q'] });
-
-    // Load EYE into the SWIPL Module and run consule("eye.pl").
-    loadEye(Module)
+    const Module = await SwiplEye({ print: (str) => { queryResults.push(str) }, arguments: ['-q'] });
 
     // Load the strings data and query as files data.n3 and query.n3 into the module
     Module.FS.writeFile('data.n3', data);
