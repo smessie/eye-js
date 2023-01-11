@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/smessie/eye-js#readme",
   "dependencies": {
-    "eyereasoner": "^2.0.0",
-    "n3": "^1.16.3"
+    "eyereasoner": "^2.0.0"
   }
 }
