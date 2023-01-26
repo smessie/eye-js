@@ -1,6 +1,17 @@
 import { SwiplEye, queryOnce } from 'eyereasoner';
 
-export async function n3reasoner(data, query) {
+export async function n3reasoner(data, query, options = {}) {
+    // Check options
+    const unknownOptions = Object.keys(options).filter(
+        (key) => !["blogic"].includes(key)
+    );
+    if (unknownOptions.length > 0) {
+        throw new Error(
+            "Unknown options: " + unknownOptions.join(", ")
+        );
+    }
+    const { blogic = false } = options;
+
     // Keep results in an array
     const queryResults = [];
 
@@ -9,10 +20,12 @@ export async function n3reasoner(data, query) {
 
     // Load the strings data and query as files data.n3 and query.n3 into the module
     Module.FS.writeFile('data.n3', data);
-    Module.FS.writeFile('query.n3', query);
+    if (!blogic) {
+        Module.FS.writeFile('query.n3', query);
+    }
 
     // Execute main(['--quiet', './data.n3', '--query', './query.n3']).
-    queryOnce(Module, 'main', ['--nope', '--quiet', './data.n3', '--query', './query.n3']);
+    queryOnce(Module, 'main', [blogic ? '--blogic' : '--nope', '--quiet', './data.n3', ...(blogic ? [] : ['--query', './query.n3'])]);
     console.log('result', queryResults.join('\n'));
 
     return queryResults.join('\n');
