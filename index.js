@@ -27,8 +27,8 @@ export async function n3reasoner(data, query, options = {}) {
     // Keep results in an array
     const queryResults = [];
 
-    // Instantiate a new SWIPL module and log any results it produces to the console, also fix relative IRIs
-    const Module = await SwiplEye({ print: (str) => { queryResults.push(str.replaceAll("<file:///data.n3#", "<#")) }, arguments: ['-q'] });
+    // Instantiate a new SWIPL module and log any results it produces to the console
+    const Module = await SwiplEye({ print: (str) => { queryResults.push(str) }, arguments: ['-q'] });
 
     // Load the strings data and query as files data.n3 and query.n3 into the module
     Module.FS.writeFile('data.n3', data);
