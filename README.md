@@ -1,6 +1,10 @@
 # eye-js
 EYE reasoning in JavaScript with WebAssembly solving your n3 reasoning with client side Prolog execution
 
+## Deprecated
+
+This package is deprecated in favor of [eyereasoner/eye-js](https://github.com/eyereasoner/eye-js). All functionality is now implemented there.
+
 ## Usage
 
 Install the package via NPM
